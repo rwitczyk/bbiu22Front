@@ -22,6 +22,7 @@ import {CarsListComponent} from './components/cars-list/cars-list.component';
 import {AppRoutingModule} from "./app-routing.module";
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {HttpClientModule} from "@angular/common/http";
+import {ToastrModule} from "ngx-toastr";
 
 @NgModule({
   declarations: [
@@ -48,7 +49,9 @@ import {HttpClientModule} from "@angular/common/http";
     MdbValidationModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
   ],
   providers: [],
   bootstrap: [AppComponent]

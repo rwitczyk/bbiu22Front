@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CarsService} from "../../services/cars.service";
 import {CarListDto} from "../../dtos/CarListDto";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-cars-list',
@@ -11,7 +12,7 @@ export class CarsListComponent implements OnInit {
 
   carsList: CarListDto[];
 
-  constructor(private carsService: CarsService) {
+  constructor(private carsService: CarsService, private toastr: ToastrService) {
   }
 
   ngOnInit(): void {
@@ -25,7 +26,7 @@ export class CarsListComponent implements OnInit {
 
   removeCar(id) {
     this.carsService.removeCar(id).subscribe(() => {
-      console.log('git');
+      this.toastr.success("Poprawnie usunieto samochod!")
       this.ngOnInit();
     })
   }
