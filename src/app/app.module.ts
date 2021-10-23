@@ -23,12 +23,16 @@ import {AppRoutingModule} from "./app-routing.module";
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {HttpClientModule} from "@angular/common/http";
 import {ToastrModule} from "ngx-toastr";
+import { CarDetailsComponent } from './components/car-details/car-details.component';
+import { AddNewCarComponent } from './components/add-new-car/add-new-car.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CarsListComponent,
-    NavbarComponent
+    NavbarComponent,
+    CarDetailsComponent,
+    AddNewCarComponent
   ],
   imports: [
     BrowserModule,
