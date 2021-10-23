@@ -20,4 +20,13 @@ export class CarsListComponent implements OnInit {
     })
   }
 
+  editCar(id) {
+  }
+
+  removeCar(id) {
+    this.carsService.removeCar(id).subscribe(() => {
+      console.log('git');
+      this.ngOnInit();
+    })
+  }
 }

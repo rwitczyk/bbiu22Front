@@ -15,4 +15,8 @@ export class CarsService {
   getCarsList(): Observable<CarListDto[]> {
     return this.http.get<CarListDto[]>(environment.backendUrl + "/all");
   }
+
+  removeCar(id): Observable<void> {
+    return this.http.delete<void>(environment.backendUrl + "/" + id);
+  }
 }
