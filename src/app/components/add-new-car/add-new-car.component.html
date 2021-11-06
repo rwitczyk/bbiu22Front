@@ -1,1 +1,42 @@
-<p>add-new-car works!</p>
+<div class="example-form">
+
+<p class="h4 mb-4">Dodaj nowe auto</p>
+
+<form class="example-form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Marka</mat-label>
+    <mat-select type="text"  [formControl]="companyFormControl">
+      <mat-option value="Bmw">Bmw</mat-option>
+      <mat-option value="Nissan">Nissan</mat-option>
+      <mat-option value="Skoda">Skoda</mat-option>
+      <mat-option value="Audi">Audi</mat-option>
+    </mat-select>
+    <mat-error *ngIf="companyFormControl.hasError('required')">
+      Pole jest <strong>wymagane</strong>
+    </mat-error>
+  </mat-form-field>
+</form>
+
+<form class="example-form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Model</mat-label>
+    <input type="text" matInput [formControl]="modelFormControl">
+    <mat-error *ngIf="modelFormControl.hasError('required')">
+      Pole jest <strong>wymagane</strong>
+    </mat-error>
+  </mat-form-field>
+</form>
+
+<form class="example-form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Liczba drzwi</mat-label>
+    <input type="text" matInput [formControl]="numberOfDoorsFormControl">
+    <mat-error *ngIf="numberOfDoorsFormControl.hasError('required')">
+      Pole jest <strong>wymagane</strong>
+    </mat-error>
+  </mat-form-field>
+</form>
+
+
+<button mat-raised-button color="primary" type="submit" (click)="createNewCar()" style="float: right">Utwórz</button>
+</div>
