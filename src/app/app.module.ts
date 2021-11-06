@@ -25,6 +25,8 @@ import {HttpClientModule} from "@angular/common/http";
 import {ToastrModule} from "ngx-toastr";
 import { CarDetailsComponent } from './components/car-details/car-details.component';
 import { AddNewCarComponent } from './components/add-new-car/add-new-car.component';
+import {MatTableModule} from "@angular/material/table";
+import {MatPaginatorModule} from "@angular/material/paginator";
 
 @NgModule({
   declarations: [
@@ -55,7 +57,10 @@ import { AddNewCarComponent } from './components/add-new-car/add-new-car.compone
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot(), // ToastrModule added
+    ToastrModule.forRoot(),
+    MatTableModule,
+    MatPaginatorModule
+    // ToastrModule added
   ],
   providers: [],
   bootstrap: [AppComponent]
