@@ -31,11 +31,10 @@ body {
     position: absolute;
     top: $pos;
     left: $pos;
-    border: $border-size solid black;
+    border: $border-size solid;
     border-radius: $size;
     height: $size;
     width: $size;
-    color: black;
   }
 
   &.cross {
@@ -50,11 +49,11 @@ body {
       font-weight: bold;
       top: -(($size / 3) + 1);
       left: -(($square-size / 10) - $adjustment - 10);
-      color: black;
     }
   }
 }
 
 .winner_class {
   color: green;
+  border-color: green;
 }

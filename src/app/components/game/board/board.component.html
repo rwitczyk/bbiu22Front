@@ -1,7 +1,6 @@
 <div class="board--container">
 
   <div *ngFor="let row of rows">
-
     <div *ngFor="let col of cols" class="square--container">
       <game-square [col]="col" [row]="row"></game-square>
     </div>

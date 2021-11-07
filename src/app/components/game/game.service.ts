@@ -90,8 +90,8 @@ export class GameService {
 
 
   private checkForEndGame(): void {
-    this.checkForWinner();
     this.checkForTie();
+    this.checkForWinner();
   }
 
   private checkForWinner(): void {
@@ -104,6 +104,13 @@ export class GameService {
       if (hasWinner) {
         const player = markOne === Mark.cross ? Player.One : Player.Two;
         this.winner = Player[player].toLowerCase();
+        document.querySelector("[ng-reflect-col=\"" + indexes[0] % 3 + "\"][ng-reflect-row=\"" + Math.floor(indexes[0]/3) + "\"]").classList.add("winner_class");
+        document.querySelector("[ng-reflect-col=\"" + indexes[1] % 3 + "\"][ng-reflect-row=\"" + Math.floor(indexes[1]/3) + "\"]").classList.add("winner_class");
+        document.querySelector("[ng-reflect-col=\"" + indexes[2] % 3 + "\"][ng-reflect-row=\"" + Math.floor(indexes[2]/3) + "\"]").classList.add("winner_class");
+
+        console.log(indexes[0]);
+        console.log(indexes[1]);
+        console.log(indexes[2]);
         break;
       }
     }

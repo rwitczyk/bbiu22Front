@@ -25,5 +25,6 @@ export class TicTacToeComponent {
   reset(): void {
     this.service.reset();
     this.changeDetector.markForCheck();
+    window.location.reload();
   }
 }

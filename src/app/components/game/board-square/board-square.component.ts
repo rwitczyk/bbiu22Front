@@ -10,7 +10,7 @@ export class BoardSquareComponent {
   @Input() col: number;
   @Input() row: number;
 
-  constructor(private service: GameService) { }
+  constructor(private service: GameService) {}
 
   select(): void {
     this.service.select(this.col, this.row);
