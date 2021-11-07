@@ -17,6 +17,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from "@angular/material/button";
 import {MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select";
+import {MatExpansionModule} from "@angular/material/expansion";
+import { OtherComponent } from './components/other/other.component';
+import {IvyCarouselModule} from "angular-responsive-carousel";
 
 @NgModule({
   declarations: [
@@ -24,7 +27,8 @@ import {MatSelectModule} from "@angular/material/select";
     CarsListComponent,
     NavbarComponent,
     CarDetailsComponent,
-    AddNewCarComponent
+    AddNewCarComponent,
+    OtherComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +43,9 @@ import {MatSelectModule} from "@angular/material/select";
     MatToolbarModule,
     MatButtonModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatExpansionModule,
+    IvyCarouselModule,
     // ToastrModule added
   ],
   providers: [],
