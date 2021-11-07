@@ -1,1 +1,42 @@
-<p>car-details works!</p>
+<div class="example-form">
+
+  <p class="h4 mb-4">Edytuj samochod</p>
+
+  <form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Marka</mat-label>
+      <select matNativeControl [formControl]="companyFormControl" [(ngModel)]="modifyCar.company">
+        <option value="Bmw">Bmw</option>
+        <option value="Nissan">Nissan</option>
+        <option value="Skoda">Skoda</option>
+        <option value="Audi">Audi</option>
+      </select>
+      <mat-error *ngIf="companyFormControl.hasError('required')">
+        Pole jest <strong>wymagane</strong>
+      </mat-error>
+    </mat-form-field>
+  </form>
+
+  <form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Model</mat-label>
+      <input type="text" matInput [formControl]="modelFormControl" [(ngModel)]="modifyCar.model">
+      <mat-error *ngIf="modelFormControl.hasError('required')">
+        Pole jest <strong>wymagane</strong>
+      </mat-error>
+    </mat-form-field>
+  </form>
+
+  <form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Liczba drzwi</mat-label>
+      <input type="text" matInput [formControl]="numberOfDoorsFormControl" [(ngModel)]="modifyCar.numberOfDoors">
+      <mat-error *ngIf="numberOfDoorsFormControl.hasError('required')">
+        Pole jest <strong>wymagane</strong>
+      </mat-error>
+    </mat-form-field>
+  </form>
+
+
+  <button mat-raised-button color="primary" type="submit" (click)="editCar()" style="float: right">Edytuj</button>
+</div>
