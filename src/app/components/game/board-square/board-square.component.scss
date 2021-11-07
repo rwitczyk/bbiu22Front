@@ -1,0 +1,21 @@
+.square--container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  cursor: pointer;
+  box-sizing: border-box;
+
+&:hover {
+   background-color: lightgray;
+ }
+}
+
+.selected {
+  $backgroud: lightgray;
+  background-color: $backgroud;
+
+&:hover {
+   background-color: $backgroud;
+ }
+}

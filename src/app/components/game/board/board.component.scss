@@ -1,0 +1,13 @@
+@import "../../../../variables.scss";
+
+.board--container {
+  display: table;
+  margin: 10px;
+  border: 1px solid black;
+}
+
+.square--container {
+  width: $square-size;
+  height: $square-size;
+  float: left;
+}
