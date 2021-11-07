@@ -9,7 +9,7 @@ import {List} from "immutable";
 })
 export class GameService {
   private totalSelectedSquares = 0;
-  private activePlayer = Player.One;
+  private activePlayer = Player.Jeden;
   private squares: List<BoardSquare>;
   private winner = "";
 
@@ -46,8 +46,8 @@ export class GameService {
     }
 
     return this.winner === "tie"
-      ? "Cat's Game!"
-      : `The winner is player ${this.winner.toLowerCase()}!`;
+      ? "Remis!"
+      : `Zwycieza gracz numer: ${this.winner.toLowerCase()}!`;
   }
 
 
@@ -84,7 +84,7 @@ export class GameService {
   reset(): void {
     this.winner = "";
     this.totalSelectedSquares = 0;
-    this.activePlayer = Player.One;
+    this.activePlayer = Player.Jeden;
     this.setupBoard();
   }
 
@@ -102,7 +102,7 @@ export class GameService {
       const markThree = this.squares.get(indexes[2]).mark;
       const hasWinner = markOne != null && markOne === markTwo && markOne === markThree;
       if (hasWinner) {
-        const player = markOne === Mark.cross ? Player.One : Player.Two;
+        const player = markOne === Mark.cross ? Player.Jeden : Player.Dwa;
         this.winner = Player[player].toLowerCase();
         document.querySelector("[ng-reflect-col=\"" + indexes[0] % 3 + "\"][ng-reflect-row=\"" + Math.floor(indexes[0]/3) + "\"]").classList.add("winner_class");
         document.querySelector("[ng-reflect-col=\"" + indexes[1] % 3 + "\"][ng-reflect-row=\"" + Math.floor(indexes[1]/3) + "\"]").classList.add("winner_class");
@@ -123,7 +123,7 @@ export class GameService {
   }
 
   private getCurrentMark(): Mark {
-    return this.activePlayer === Player.Two
+    return this.activePlayer === Player.Dwa
       ? Mark.nought
       : Mark.cross;
   }
@@ -149,8 +149,8 @@ export class GameService {
   }
 
   private togglePlayer(): void {
-    this.activePlayer = this.activePlayer === Player.One
-      ? Player.Two
-      : Player.One;
+    this.activePlayer = this.activePlayer === Player.Jeden
+      ? Player.Dwa
+      : Player.Jeden;
   }
 }

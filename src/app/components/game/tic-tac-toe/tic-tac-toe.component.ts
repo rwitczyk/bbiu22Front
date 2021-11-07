@@ -15,7 +15,7 @@ export class TicTacToeComponent {
 
   get currentTurnText(): string {
     const player = this.service.getActivePlayer();
-    return `Player ${player}'s turn.`;
+    return `Ruch gracza numer: ${player} `;
   }
 
   get winnerText(): string {
